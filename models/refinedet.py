@@ -3,7 +3,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from layers import *
-from data import voc_refinedet, coco_refinedet
+from data import voc_refinedet, coco_refinedet, coco_navinfo_refinedet
 import os
 
 
@@ -29,7 +29,7 @@ class RefineDet(nn.Module):
         super(RefineDet, self).__init__()
         self.phase = phase
         self.num_classes = num_classes
-        self.cfg = (coco_refinedet, voc_refinedet)[num_classes == 21]
+        self.cfg = (coco_refinedet, voc_refinedet, coco_navinfo_refinedet)[num_classes == 13]
         self.priorbox = PriorBox(self.cfg[str(size)])
         with torch.no_grad():
             self.priors = self.priorbox.forward()
