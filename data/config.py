@@ -104,3 +104,18 @@ coco_refinedet = {
     'clip': True,
     'name': 'COCO',
 }
+
+coco_navinfo_refinedet = {
+    'num_classes': 13,
+    'lr_steps': (80000, 100000, 120000),
+    'max_iter': 120000,
+    'feature_maps': [64, 32, 16, 8],
+    'min_dim': 512,
+    'steps': [8, 16, 32, 64],
+    'min_sizes': [32, 64, 128, 256],
+    'max_sizes': [],
+    'aspect_ratios': [[2], [2], [2], [2]],
+    'variance': [0.1, 0.2],
+    'clip': True,
+    'name': 'RefineDet_COCO_Navinfo_512',
+}
