@@ -3,7 +3,7 @@ import os.path
 
 # gets home dir cross platform
 # HOME = os.path.expanduser("~")
-HOME = '/data'
+HOME = '.'
 
 # for making bounding boxes pretty
 COLORS = ((255, 0, 0, 128), (0, 255, 0, 128), (0, 0, 255, 128),
@@ -117,5 +117,5 @@ coco_navinfo_refinedet = {
     'aspect_ratios': [[2], [2], [2], [2]],
     'variance': [0.1, 0.2],
     'clip': True,
-    'name': 'RefineDet_COCO_Navinfo_512',
+    'name': 'RefineDet_COCO_NavInfo_512',
 }
