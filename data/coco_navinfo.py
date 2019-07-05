@@ -74,7 +74,7 @@ class COCODetection(data.Dataset):
                  target_transform=COCOAnnotationTransform(), dataset_name='MS COCO'):
         sys.path.append(osp.join(root, COCO_API))
         from pycocotools.coco import COCO
-        self.root = osp.join(root, IMAGES, image_set)
+        self.root = osp.join(root, IMAGES)
         self.coco = COCO(osp.join(root, ANNOTATIONS,
                                   INSTANCES_SET.format(image_set)))
         self.ids = list(self.coco.imgToAnns.keys())
