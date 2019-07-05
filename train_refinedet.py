@@ -91,7 +91,7 @@ def train():
                                transform=SSDAugmentation(cfg['min_dim'],
                                                          MEANS))
     elif args.dataset == 'COCO_NavInfo':
-        cfg = coco_navinfo_refinedet
+        cfg = coco_navinfo_refinedet[args.input_size]
         dataset = COCODetection(root=args.dataset_root,
                                 transform=SSDAugmentation(cfg['min_dim'],
                                                           MEANS))
