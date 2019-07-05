@@ -109,7 +109,9 @@ class COCODetection(data.Dataset):
         ann_ids = self.coco.getAnnIds(imgIds=img_id)
 
         target = self.coco.loadAnns(ann_ids)
+        print("imgid:{}".format(img_id))
         path = osp.join(self.root, self.coco.loadImgs(img_id)[0]['file_name'])
+        print("path:{}".format(path))
         assert osp.exists(path), 'Image path does not exist: {}'.format(path)
         img = cv2.imread(path)
         height, width, _ = img.shape
