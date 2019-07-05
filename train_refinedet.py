@@ -90,7 +90,7 @@ def train():
         dataset = VOCDetection(root=args.dataset_root,
                                transform=SSDAugmentation(cfg['min_dim'],
                                                          MEANS))
-    elif args.dataset == 'COCO_Navinfo':
+    elif args.dataset == 'COCO_NavInfo':
         cfg = coco_navinfo_refinedet
         dataset = COCODetection(root=args.dataset_root,
                                 transform=SSDAugmentation(cfg['min_dim'],
