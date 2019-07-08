@@ -247,7 +247,7 @@ def train():
             % (arm_loss_l.item(), arm_loss_c.item(), odm_loss_l.item(), odm_loss_c.item()), end=' ')
 
         if args.visdom:
-            update_vis_plot(iteration, arm_loss_l.data[0], arm_loss_c.data[0],
+            update_vis_plot(iteration, arm_loss_l.item(), arm_loss_c.item(),
                             iter_plot, epoch_plot, 'append')
 
         if iteration != 0 and iteration % 5000 == 0:
