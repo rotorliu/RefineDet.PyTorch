@@ -94,6 +94,10 @@ if not os.path.exists(args.save_folder):
 
 sys.stdout = Logger(os.path.join(args.save_folder, 'log.txt'))
 
+if args.visdom:
+    import visdom
+    viz = visdom.Visdom()
+
 def train():
     if args.dataset == 'COCO':
         '''if args.dataset_root == VOC_ROOT:
@@ -119,9 +123,7 @@ def train():
                                 transform=SSDAugmentation(cfg['min_dim'],
                                                           MEANS))
 
-    if args.visdom:
-        import visdom
-        viz = visdom.Visdom()
+    
 
     refinedet_net = build_refinedet('train', cfg['min_dim'], cfg['num_classes'])
     net = refinedet_net
