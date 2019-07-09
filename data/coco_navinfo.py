@@ -11,7 +11,6 @@ import numpy as np
 COCO_ROOT = osp.join(HOME, 'data/')
 IMAGES = 'images'
 ANNOTATIONS = 'annotations'
-COCO_API = '/workspace/cocoapi/PythonAPI'
 INSTANCES_SET = '{}.json'
 COCO_CLASSES = ('pl', 'pr', 'pa', 'w', 'ph', 'pn',
                 'pg', 'i', 'ih', 'id', 'gan', 'tl')
@@ -72,7 +71,6 @@ class COCODetection(data.Dataset):
 
     def __init__(self, root, image_set='train', transform=None,
                  target_transform=COCOAnnotationTransform(), dataset_name='NavInfo Sign COCO'):
-        sys.path.append(COCO_API)
         from pycocotools.coco import COCO
         self.root = osp.join(root, IMAGES)
         self.coco = COCO(osp.join(root, ANNOTATIONS,
