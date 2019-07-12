@@ -250,7 +250,7 @@ def train():
             update_vis_plot(iteration, arm_loss_l.item(), arm_loss_c.item(),
                             iter_plot, epoch_plot, 'append')
 
-        if iteration != 0 and iteration % 5000 == 0:
+        if iteration != 0 and iteration % 1000 == 0:
             print('Saving state, iter:', iteration)
             torch.save(refinedet_net.state_dict(), args.save_folder 
             + '/RefineDet{}_{}_{}.pth'.format(args.input_size, args.dataset, 
